@@ -85,7 +85,7 @@ class Application(tk.Frame):
             elif i % 2 != 1:
                 if labelNumber <= 2:
                     labelNumber += 1
-                    label = tk.Label(clickInterval, text="-", font=("Berlin Sans FB Demi", 30))
+                    label = tk.Label(clickInterval, text="-", bg="#FFFFFF", font=("Berlin Sans FB Demi", 30))
                     label.grid(row=1, column=(i - 1))
 
         for i in range(0, 8, 2):
@@ -181,7 +181,7 @@ class Application(tk.Frame):
         radioStyle.configure("TRadiobutton", padding=4, relief="flat", background="#FFFFFF", foreground="#707070",
                              font=("Berlin Sans FB Demi", 10), borderwidth=0, sticky="w")
 
-        radioStyle.map("TRadiobutton", background=[("selected", "#FFFFFF")], foreground=[("selected", "#383838")])
+        radioStyle.map("TRadiobutton", background=[("selected", "#FFFFFF")], foreground=[("selected", "#03DAC6")])
 
         radioStyle.map("TRadiobutton", focuscolor=[("", "")], focusthickness=[("", 0)])
 
@@ -275,7 +275,7 @@ class Application(tk.Frame):
         currentLocation.grid(row=1, column=0, columnspan=6, sticky="w")
 
         pickLocation = ttk.Radiobutton(cursorPosition, text="", variable=cursorPositionOption,
-                                       value="Repeat2")
+                                       value="pickLocation")
         pickLocation.grid(row=1, column=8, sticky="w")
 
         pickLocationButton = tk.Button(cursorPosition, text="PICK LOCATION",bg="#383838", fg="#FFFFFF", font=("Berlin Sans FB Demi", 10),
@@ -298,7 +298,7 @@ class Application(tk.Frame):
                                  justify=tk.CENTER, width=3)
         pickLocationY.grid(row=1, column=13)
 
-        cursorPositionOption.set("Repeat2")
+        cursorPositionOption.set("currentLocation")
 
         for i in range(14):
             cursorPosition.columnconfigure(i, weight=1)
